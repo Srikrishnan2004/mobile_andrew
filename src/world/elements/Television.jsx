@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import { useVideoTexture } from '@react-three/drei';
-import { useGLTFWithKTX2 } from './useGTLFwithKTX';
+import { useGLTFWithKTX2 } from '../../services/useGTLFwithKTX';
 
 export default function Television({
   videoPath,

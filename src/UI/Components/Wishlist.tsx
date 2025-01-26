@@ -5,9 +5,9 @@ import {
   Typography,
   Button
 } from '@mui/material';
-import useWishlist from './WishlistHook';
+import useWishlist from '../../services/WishlistHook';
 import Swal from 'sweetalert2';
-import styles from '@/UI/UI.module.scss';
+import styles from '../UI.module.scss';
 import { useComponentStore } from '@/stores/ZustandStores';
 
 const Wishlist = () => {

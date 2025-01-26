@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
-import { useGLTFWithKTX2 } from "./useGTLFwithKTX";
-import mannequinData from "./data/MannequinData";
+import { useGLTFWithKTX2 } from "../../services/useGTLFwithKTX";
+import mannequinData from "../../data/MannequinData";
 const LazyMannequin = React.lazy(() => import("./Mannequin"));
 
 const Products = () => {

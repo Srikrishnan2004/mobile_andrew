@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import {Image } from '@react-three/drei';
-import { useGLTFWithKTX2 } from './useGTLFwithKTX';
+import { useGLTFWithKTX2 } from '../../services/useGTLFwithKTX';
 
 const LogoPanel = ({ 
   modelPath, 

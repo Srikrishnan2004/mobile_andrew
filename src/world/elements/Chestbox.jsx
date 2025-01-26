@@ -1,9 +1,9 @@
 import React, { Suspense, useMemo, useRef } from "react";
 import { PivotControls } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
-import { useGLTFWithKTX2 } from "./useGTLFwithKTX";
+import { useGLTFWithKTX2 } from "../../services/useGTLFwithKTX";
 import { useFrame } from "@react-three/fiber";
-import { useComponentStore } from "./stores/ZustandStores";
+import { useComponentStore } from "../../stores/ZustandStores";
 
 const ChestBox = () => {
   const chestBoxData = [

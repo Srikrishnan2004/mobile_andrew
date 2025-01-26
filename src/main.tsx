@@ -5,8 +5,8 @@ import { Html, useProgress } from "@react-three/drei";
 import App from "@/App.jsx";
 import "@/index.scss";
 import UI from "@/UI/UI.tsx";
-import Load from "@/Loader.tsx";
-import { ProductService } from "./api/shopifyAPIService";
+import Load from "@/UI/Components/Loader";
+import { ProductService } from "./services/shopifyAPIService";
 import { useComponentStore } from "./stores/ZustandStores";
 import { ACESFilmicToneMapping } from "three";
 

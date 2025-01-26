@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { RigidBody } from "@react-three/rapier";
-import { useGLTFWithKTX2 } from "./useGTLFwithKTX";
+import { useGLTFWithKTX2 } from "../../services/useGTLFwithKTX";
 import { MeshReflectorMaterial } from "@react-three/drei";
 
 export function Ground(props) {

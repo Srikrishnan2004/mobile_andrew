@@ -13,28 +13,6 @@ interface ComponentStore {
   setProducts: (products: Product[]) => void;
   setSelectedProduct: (productId: number) => void;
 
-  // Search Handling 
-  searchResult: { 
-    x: number; 
-    y: number; 
-    z: number; 
-    rotationX?: number;  // Optional rotation around X-axis
-    rotationY?: number;  // Optional rotation around Y-axis
-    rotationZ?: number;  // Optional rotation around Z-axis
-  } | null;
-  initiateSearchGSAP: boolean; 
-  setSearchResult: (position: { 
-    x: number; 
-    y: number; 
-    z: number; 
-    rotationX?: number; 
-    rotationY?: number; 
-    rotationZ?: number; 
-  }) => void;
-
-  startSearchGSAP: () => void;
-  resetSearchGSAP: () => void;
-
   // Modal Handling
   isModalOpen: boolean;
   openModal: () => void;
@@ -102,23 +80,6 @@ const useComponentStore = create<ComponentStore>((set) => ({
       );
       return { ...state, selectedProduct: finalProduct };
     }),
-
-  // Search Handling 
-  searchResult:null,
-  initiateSearchGSAP: false,
-  setSearchResult: (position: { 
-    x: number; 
-    y: number; 
-    z: number; 
-    rotationX?: number;
-    rotationY?: number;
-    rotationZ?: number;
-  }) => set({ searchResult: position }),
-  startSearchGSAP: () => set({ initiateSearchGSAP: true }),
-  resetSearchGSAP: () => set({
-    searchResult: null,
-    initiateSearchGSAP: false,
-  }),
 
   // Modal Handling
   isModalOpen: false,
@@ -268,10 +229,55 @@ const useTourStore = create<TourStore>((set) => ({
   setTourComplete: (value) => set({ tourComplete: value }),
 }));
 
+// Search Product Handling
+interface SearchStore {
+  // Search Handling 
+  searchResult: { 
+    x: number; 
+    y: number; 
+    z: number; 
+    rotationX?: number;
+    rotationY?: number;
+    rotationZ?: number;
+  } | null;
+  initiateSearchGSAP: boolean; 
+  setSearchResult: (position: { 
+    x: number; 
+    y: number; 
+    z: number; 
+    rotationX?: number; 
+    rotationY?: number; 
+    rotationZ?: number; 
+  }) => void;
+
+  startSearchGSAP: () => void;
+  resetSearchGSAP: () => void;
+}
+
+const useSearchStore = create<SearchStore>((set) => ({
+  // Search Handling 
+  searchResult:null,
+  initiateSearchGSAP: false,
+  setSearchResult: (position: { 
+    x: number; 
+    y: number; 
+    z: number; 
+    rotationX?: number;
+    rotationY?: number;
+    rotationZ?: number;
+  }) => set({ searchResult: position }),
+  startSearchGSAP: () => set({ initiateSearchGSAP: true }),
+  resetSearchGSAP: () => set({
+    searchResult: null,
+    initiateSearchGSAP: false,
+  }),
+}));
+
 export {
   useComponentStore,
   usePointerLockStore,
   useTouchStore,
   useDriverStore,
   useTourStore,
+  useSearchStore
 };

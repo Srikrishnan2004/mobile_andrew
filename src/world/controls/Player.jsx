@@ -2,13 +2,13 @@ import * as THREE from "three";
 import * as RAPIER from "@dimforge/rapier3d-compat";
 import { CapsuleCollider, RigidBody, useRapier } from "@react-three/rapier";
 import { useRef, useState, useEffect } from "react";
-import { usePersonControls } from "@/hooks.js";
+import { usePersonControls } from "@/world/controls/hooks.js";
 import { useFrame, useThree } from "@react-three/fiber";
 import nipplejs from "nipplejs";
 import gsap from "gsap";
-import { useComponentStore, useTouchStore } from "./stores/ZustandStores";
-import { CameraController } from "./CameraController";
-import { ProductGSAPUtil }  from "./ProductGSAPUtil";
+import { useComponentStore, useTouchStore } from "../../stores/ZustandStores";
+import { CameraController } from "../tour/CameraController";
+import { ProductGSAPUtil }  from "../tour/ProductGSAPUtil";
 
 const MOVE_SPEED = 1;
 const TOUCH_SENSITIVITY = {

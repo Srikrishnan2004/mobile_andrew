@@ -1,10 +1,10 @@
 import { Box, Button, Card, Typography, ButtonBase } from "@mui/material";
 import { useCart, ModelViewer } from "@shopify/hydrogen-react";
 import { useEffect, useRef, useState } from "react";
-import { useComponentStore } from "./stores/ZustandStores";
-import Variant from "./Types/Variant";
+import { useComponentStore } from "../../stores/ZustandStores";
+import Variant from "../../Types/Variant";
 import DOMPurify from 'dompurify';
-import useWishlist from "./WishlistHook";
+import useWishlist from "../../services/WishlistHook";
 import Swal from "sweetalert2";
 import styles from "@/UI/UI.module.scss";
 

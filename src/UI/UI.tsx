@@ -2,20 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import { driver, Driver } from "driver.js";
 import "driver.js/dist/driver.css";
 import styles from "@/UI/UI.module.scss";
-import ChatbotModal from "../Chatbot";
-import { useComponentStore, useDriverStore, useTourStore } from "../stores/ZustandStores";
+import ChatbotModal from "./Components/Chatbot";
+import { useComponentStore, useDriverStore, useSearchStore, useTourStore } from "../stores/ZustandStores";
 import { ShopifyProvider, CartProvider } from "@shopify/hydrogen-react";
-import Modal from "@/NewModal";
-import Cart from "@/Cart";
-import Wishlist from "@/Wishlist";
-import InfoModal from "@/InfoModal";
-import DiscountModal from "@/DiscountModal";
-import SettingsModal from "@/SettingsModal";
-import TermsConditionsModal from "@/TermsModal";
-import ContactUsModal from "@/ContactUsModal";
+import Modal from "@/UI/Modals/NewModal";
+import Cart from "@/UI/Components/Cart";
+import Wishlist from "@/UI/Components/Wishlist";
+import InfoModal from "@/UI/Modals/InfoModal";
+import DiscountModal from "@/UI/Modals/DiscountModal";
+import SettingsModal from "@/UI/Modals/SettingsModal";
+import TermsConditionsModal from "@/UI/Modals/TermsModal";
+import ContactUsModal from "@/UI/Modals/ContactUsModal";
 import ReactAudioPlayer from "react-audio-player";
-import ModalWrapper from "@/ModalWrapper";
-import ProductSearcher from "@/ProductSearcher";
+import ModalWrapper from "@/UI/Components/ModalWrapper";
+import ProductSearcher from "@/UI/Components/ProductSearcher";
 
 
 const customDriverStyles = `
@@ -65,10 +65,11 @@ const UI = () => {
     isInfoModalOpen, openInfoModal, closeInfoModal,
     discountCode, isDiscountModalOpen, closeDiscountModal,
     isSettingsModalOpen , openSettingsModal, closeSettingsModal,
-    isAudioPlaying,setSearchResult, startSearchGSAP,
+    isAudioPlaying,
     isTermsModalOpen,isContactModalOpen,
     isProductSearcherOpen,openProductSearcher,closeProductSearcher
   } = useComponentStore();
+  const {setSearchResult, startSearchGSAP} = useSearchStore();
   const { activateDriver, deactivateDriver} = useDriverStore();
   const { setTourComplete } = useTourStore();
 

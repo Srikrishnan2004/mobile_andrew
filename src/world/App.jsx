@@ -4,19 +4,19 @@ import { Ground } from "@/Ground.jsx";
 import { Physics } from "@react-three/rapier";
 import { Player } from "@/Player.jsx";
 import { useFrame } from "@react-three/fiber";
-import Television from "./Television";
-import BrandPoster from "./BrandPoster";
-import Products from "./Products";
-import ChestBox from "./Chestbox";
-import LogoPanel from "./LogoPanel";
+import Television from "./elements/Television";
+import BrandPoster from "./elements/BrandPoster";
+import Products from "./elements/Products";
+import ChestBox from "./elements/Chestbox";
+import LogoPanel from "./elements/LogoPanel";
 import { Suspense, useState, useEffect } from "react";
-import Skybox from "./Skybox";
+import Skybox from "./elements/Skybox";
 import {
   useComponentStore,
   usePointerLockStore,
   useDriverStore,
-} from "./stores/ZustandStores";
-import { useTouchStore } from "./stores/ZustandStores";
+} from "../stores/ZustandStores";
+import { useTouchStore } from "../stores/ZustandStores";
 
 const shadowOffset = 50;
 

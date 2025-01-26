@@ -1,18 +1,17 @@
 import { TextField, Typography, Box } from "@mui/material";
 import { useState, useEffect, useRef, useMemo } from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import { useComponentStore } from "./stores/ZustandStores";
-import Product from "./Types/Product";
+import { useComponentStore, useSearchStore } from "../../stores/ZustandStores";
+import Product from "../../Types/Product";
 import Fuse from "fuse.js";
-import mannequinData, {MannequinData} from "./data/MannequinData";
-import gsapData from './data/gsapData';
+import mannequinData, {MannequinData} from "../../data/MannequinData";
+import gsapData from '../../data/gsapData';
 
 const ProductSearcher = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([] as Product[]);
-  const { closeProductSearcher, products, setSearchResult, startSearchGSAP } =
-    useComponentStore();
-
+  const { closeProductSearcher, products} = useComponentStore();
+  const { setSearchResult, startSearchGSAP } = useSearchStore();
   
   const filteredProducts = useMemo(() => {
     const mannequinIds = mannequinData.map((item: MannequinData) => item.id);
